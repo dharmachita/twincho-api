@@ -37,7 +37,7 @@ export class TwinchsService {
     if(!twinch){
       throw new NotFoundException('Resource not found');
     }
-    return twinch;
+    return this.twinchRepository.save(twinch);
   }
 
   async deleteTwinch(id: number): Promise<void> {
